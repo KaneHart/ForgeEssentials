@@ -503,11 +503,7 @@ public class ProtectionEventHandler extends ServerEventHandler
         UserIdent ident = UserIdent.get(event.entityPlayer);
         WorldPoint point = new WorldPoint(event.entity.dimension, event.x, event.y, event.z);
         if (!APIRegistry.perms.checkUserPermission(ident, point, ModuleProtection.PERM_SLEEP))
-        {
-            event.result = EnumStatus.NOT_POSSIBLE_HERE;
-            ChatOutputHandler.sendMessage(event.entityPlayer, Translator.translate("You are not allowed to sleep here"));
-            return;
-        }
+
         checkMajoritySleep = true;
     }
 
